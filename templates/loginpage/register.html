@@ -1,0 +1,26 @@
+{% extends 'loginpage/base.html' %}
+{% load static %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+
+      {% if registerd %}
+        <h1>Thakyou for Registering </h1>
+      {% else %}
+
+         <form id="inform" enctype="multipart/form-data" method="post">
+           <h1>SIGNUP</h1>
+          {% csrf_token %}
+          {{signup_page.as_p}}
+          {{user_profile.as_p}}
+          <input type="submit" class="btn btn-dark"></input>
+      {% endif %}
+
+
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
